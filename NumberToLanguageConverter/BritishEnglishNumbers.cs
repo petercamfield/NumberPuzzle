@@ -4,7 +4,7 @@ namespace NumberToLanguageConverter
 {
     public class BritishEnglishNumbers : IDescribeNumbers
     {
-        private readonly Dictionary<int, string> lookup =
+        private readonly Dictionary<int, string> numberLookup =
             new Dictionary<int, string>
                 {
                     {1, "one"},      {2, "two"},        {3, "three"},     {4, "four"},      {5, "five"}, 
@@ -15,9 +15,25 @@ namespace NumberToLanguageConverter
                     {80, "eighty"},  {90, "ninety"}
                 };
 
-        public LookupResult Lookup(int number)
+        private readonly Dictionary<int, string> powerOfTenLookup =
+            new Dictionary<int, string>
+                {
+                    {2, "hundred"}
+                };
+
+        public LookupResult LookupNumber(int number)
         {
-            return lookup.ContainsKey(number) ? new LookupResult(lookup[number]) : LookupResult.NotFound;
+            return LookupValue(number, numberLookup);
+        }
+
+        public LookupResult LookupPowerOfTen(int powerOfTen)
+        {
+            return LookupValue(powerOfTen, powerOfTenLookup);
+        }
+
+        private static LookupResult LookupValue(int key, Dictionary<int,string> lookup)
+        {
+            return lookup.ContainsKey(key) ? new LookupResult(lookup[key]) : LookupResult.NotFound;
         }
     }
 }

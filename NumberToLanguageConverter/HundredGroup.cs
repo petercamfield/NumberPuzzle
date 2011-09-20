@@ -1,17 +1,15 @@
-﻿using System;
-
-namespace NumberToLanguageConverter
+﻿namespace NumberToLanguageConverter
 {
     public class HundredGroup
     {
         private readonly int units;
         private readonly int tens;
-        private readonly int hundreds;
+        private readonly int numberOfHundreds;
 
         public HundredGroup(int number)
         {
             var formattedNumber = number.ToString("000");
-            hundreds = NumberAtIndex(formattedNumber, 0) * 100;
+            numberOfHundreds = NumberAtIndex(formattedNumber, 0);
             tens = NumberAtIndex(formattedNumber, 1) * 10;
             units = NumberAtIndex(formattedNumber, 2);
         }
@@ -33,7 +31,12 @@ namespace NumberToLanguageConverter
 
         public int Hundreds 
         {
-            get { return hundreds; }
+            get { return numberOfHundreds * 100; }
+        }
+
+        public int NumberOfHundreds
+        {
+            get { return numberOfHundreds; }
         }
     }
 }

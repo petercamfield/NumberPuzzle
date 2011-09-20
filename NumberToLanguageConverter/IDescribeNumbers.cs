@@ -2,6 +2,7 @@
 {
     public interface IDescribeNumbers
     {
-        LookupResult Lookup(int number);
+        LookupResult LookupNumber(int number);
+        LookupResult LookupPowerOfTen(int powerOfTen);
     }
 }

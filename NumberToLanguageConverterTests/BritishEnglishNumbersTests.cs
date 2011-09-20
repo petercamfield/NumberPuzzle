@@ -10,7 +10,7 @@ namespace NumberToLanguageConverterTests
 
         private void AssertLookupEquals(int number, string description)
         {
-            var lookupResult = britishEnglishNumbers.Lookup(number);
+            var lookupResult = britishEnglishNumbers.LookupNumber(number);
             Assert.That(lookupResult.Description, Is.EqualTo(description));
             Assert.That(lookupResult.Found, Is.True);
         }
@@ -180,7 +180,7 @@ namespace NumberToLanguageConverterTests
         [Test]
         public void ReturnsNotFoundLookupResult()
         {
-            Assert.That(britishEnglishNumbers.Lookup(-1), Is.EqualTo(LookupResult.NotFound));
+            Assert.That(britishEnglishNumbers.LookupNumber(-1), Is.EqualTo(LookupResult.NotFound));
         }
     }
 
