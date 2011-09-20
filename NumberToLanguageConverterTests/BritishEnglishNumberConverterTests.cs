@@ -15,5 +15,11 @@ namespace NumberToLanguageConverterTests
             converter.Convert(1);
             numberDescriber.Verify(n=>n.Lookup(1));
         }
+
+        [Test]
+        public void ReturnsTwentyOne()
+        {
+            Assert.That(new BritishEnglishNumberConverter().Convert(21), Is.EqualTo("twenty one"));
+        }
     }
 }

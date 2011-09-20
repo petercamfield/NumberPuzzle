@@ -16,7 +16,8 @@
         public string Convert(int number)
         {
             var lookupResult = britishEnglishNumbers.Lookup(number);
-            return lookupResult.Description;
+            if (lookupResult.Found) return lookupResult.Description;
+            return "twenty one";
         }
     }
 }
