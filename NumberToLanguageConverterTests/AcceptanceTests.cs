@@ -15,7 +15,7 @@ namespace NumberToLanguageConverterTests
         [Test]
         public void ReturnsTwentyOne()
         {
-            Assert.That(new BritishEnglishNumberConverter().Convert(1), Is.EqualTo("twenty one"));
+            Assert.That(new BritishEnglishNumberConverter().Convert(21), Is.EqualTo("twenty one"));
         }
 
         [Test]

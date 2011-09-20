@@ -17,7 +17,7 @@ namespace NumberToLanguageConverter
 
         public string Convert(int number)
         {
-            return britishEnglishNumbers.Lookup(1);
+            return britishEnglishNumbers.Lookup(number);
         }
     }
 }
