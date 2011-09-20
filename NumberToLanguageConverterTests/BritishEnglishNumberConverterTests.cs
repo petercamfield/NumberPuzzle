@@ -19,15 +19,15 @@ namespace NumberToLanguageConverterTests
         }
 
         [Test]
-        public void ReturnsTwentyOne()
+        public void ReturnsOne()
         {
-            Assert.That(converter.Convert(21), Is.EqualTo("twenty one"));
+            Assert.That(converter.Convert(1), Is.EqualTo("one"));
         }
 
         [Test]
-        public void ReturnsTwentyTwo()
+        public void ReturnsTwentyOne()
         {
-            Assert.That(converter.Convert(22), Is.EqualTo("twenty two"));
+            Assert.That(converter.Convert(21), Is.EqualTo("twenty one"));
         }
 
         [Test]
@@ -41,23 +41,11 @@ namespace NumberToLanguageConverterTests
         {
             Assert.That(converter.Convert(100), Is.EqualTo("one hundred"));
         }
-
-        [Test]
-        public void ReturnsTwoHundred()
-        {
-            Assert.That(converter.Convert(200), Is.EqualTo("two hundred"));
-        }
-
+        
         [Test]
         public void ReturnsOneHundredAndOne()
         {
             Assert.That(converter.Convert(101), Is.EqualTo("one hundred and one"));
-        }
-
-        [Test]
-        public void ReturnsOneHundredAndFifty()
-        {
-            Assert.That(converter.Convert(150), Is.EqualTo("one hundred and fifty"));
         }
 
         [Test]
