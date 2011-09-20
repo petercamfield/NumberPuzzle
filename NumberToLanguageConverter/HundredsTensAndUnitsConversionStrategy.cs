@@ -8,15 +8,33 @@
 
         public override string Convert(HundredGroup hundredGroup)
         {
-            var hundreds = new HundredsConversionStrategy(NumberDescriber).Convert(new HundredGroup(hundredGroup.Hundreds));
-            var tensAndUnits = new TensAndUnitsConversionStrategy(NumberDescriber).Convert(new HundredGroup(hundredGroup.Tens + hundredGroup.Units));
-            return Format(hundreds, tensAndUnits);
+            var hundreds = ConvertHundreds(hundredGroup);
+            var tensAndUnits = ConvertTensAndUnits(hundredGroup);
+            return Format(hundreds, NumberDescriber.Conjunction, tensAndUnits);
         }
 
-        private static string Format(string hundreds, string tensAndUnits)
+        private string ConvertHundreds(HundredGroup hundredGroup)
         {
-            const string numberFormat = "{0} and {1}";
-            return string.Format(numberFormat, hundreds, tensAndUnits);
+            var hundreds = new HundredGroup(hundredGroup.Hundreds);
+            return GetConversionStrategy(hundreds).Convert(hundreds);
+        }
+
+        private string ConvertTensAndUnits(HundredGroup hundredGroup)
+        {
+            var tensAndUnits = new HundredGroup(hundredGroup.Tens + hundredGroup.Units);
+            return GetConversionStrategy(tensAndUnits).Convert(tensAndUnits);
+        }
+
+        private ConversionStrategy GetConversionStrategy(HundredGroup hundredGroup)
+        {
+            var factory = new ConversionStrategyFactory(NumberDescriber);
+            return factory.CreateConversionStrategy(hundredGroup);
+        }
+
+        private static string Format(string hundreds, string conjunction, string tensAndUnits)
+        {
+            const string numberFormat = "{0} {1} {2}";
+            return string.Format(numberFormat, hundreds, conjunction, tensAndUnits);
         }
     }
 }

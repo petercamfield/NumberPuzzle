@@ -29,10 +29,7 @@ namespace NumberToLanguageConverter
 
         public static LookupResult NotFound
         {
-            get
-            {
-                return NotFoundLookupResult;
-            }
+            get { return NotFoundLookupResult; }
         }
     }
 }

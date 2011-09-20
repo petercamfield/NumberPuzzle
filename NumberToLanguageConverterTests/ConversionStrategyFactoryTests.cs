@@ -1,4 +1,3 @@
-using System;
 using NumberToLanguageConverter;
 using NUnit.Framework;
 
@@ -7,28 +6,27 @@ namespace NumberToLanguageConverterTests
     [TestFixture]
     public class ConversionStrategyFactoryTests
     {
+        private static readonly ConversionStrategyFactory Factory = new ConversionStrategyFactory(new BritishEnglishNumbers());
+
+        [Test]
+        public void ReturnsHundredsStrategy()
+        {
+            var hundredGroup = new HundredGroup(100);
+            Assert.That(Factory.CreateConversionStrategy(hundredGroup), Is.TypeOf<HundredsConversionStrategy>());
+        }
+
         [Test]
         public void ReturnsTensAndUnitsStrategy()
         {
-            var factory = new ConversionStrategyFactory(new BritishEnglishNumbers());
             var hundredGroup = new HundredGroup(25);
-            Assert.That(factory.CreateConversionStrategy(hundredGroup), Is.TypeOf<TensAndUnitsConversionStrategy>());
-        }
-    }
-
-    public class ConversionStrategyFactory
-    {
-        private readonly IDescribeNumbers numberDescriber;
-
-        public ConversionStrategyFactory(IDescribeNumbers numberDescriber)
-        {
-            this.numberDescriber = numberDescriber;
+            Assert.That(Factory.CreateConversionStrategy(hundredGroup), Is.TypeOf<TensAndUnitsConversionStrategy>());
         }
 
-        public ConversionStrategy CreateConversionStrategy(object hundredGroup)
+        [Test]
+        public void ReturnsHundredsTensAndUnitsStrategy()
         {
-            throw new NotImplementedException();
-            //Move stuff from NumberConverter class
+            var hundredGroup = new HundredGroup(101);
+            Assert.That(Factory.CreateConversionStrategy(hundredGroup), Is.TypeOf<HundredsTensAndUnitsConversionStrategy>());
         }
     }
 }

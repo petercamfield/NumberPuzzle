@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NumberToLanguageConverter
 {
@@ -29,6 +30,11 @@ namespace NumberToLanguageConverter
         public LookupResult LookupPositionalName(int number)
         {
             return LookupValue(number, positionalLookup);
+        }
+
+        public string Conjunction
+        {
+            get { return "and"; }
         }
 
         private static LookupResult LookupValue(int key, IDictionary<int, string> lookup)

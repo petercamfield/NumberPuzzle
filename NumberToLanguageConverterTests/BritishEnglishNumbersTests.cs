@@ -184,6 +184,12 @@ namespace NumberToLanguageConverterTests
         }
 
         [Test]
+        public void ReturnsConjunction()
+        {
+            Assert.That(britishEnglishNumbers.Conjunction, Is.EqualTo("and"));
+        }
+
+        [Test]
         public void ReturnsNotFoundLookupResult()
         {
             Assert.That(britishEnglishNumbers.LookupNumber(-1), Is.EqualTo(LookupResult.NotFound));

@@ -4,5 +4,6 @@
     {
         LookupResult LookupNumber(int number);
         LookupResult LookupPositionalName(int number);
+        string Conjunction { get; }
     }
 }
