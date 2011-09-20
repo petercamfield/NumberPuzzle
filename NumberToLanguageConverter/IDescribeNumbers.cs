@@ -3,6 +3,6 @@
     public interface IDescribeNumbers
     {
         LookupResult LookupNumber(int number);
-        LookupResult LookupPowerOfTen(int powerOfTen);
+        LookupResult LookupPositionalName(int number);
     }
 }

@@ -47,5 +47,24 @@ namespace NumberToLanguageConverterTests
         {
             Assert.That(converter.Convert(200), Is.EqualTo("two hundred"));
         }
+
+        [Test]
+        public void ReturnsOneHundredAndOne()
+        {
+            Assert.That(converter.Convert(101), Is.EqualTo("one hundred and one"));
+        }
+
+        [Test]
+        public void ReturnsOneHundredAndFifty()
+        {
+            Assert.That(converter.Convert(150), Is.EqualTo("one hundred and fifty"));
+        }
+
+        [Test]
+        public void ReturnsNineHundredAndNinetyNine()
+        {
+            Assert.That(converter.Convert(999), Is.EqualTo("nine hundred and ninety nine"));
+        }
+
     }
 }

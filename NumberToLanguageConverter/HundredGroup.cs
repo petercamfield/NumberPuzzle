@@ -5,13 +5,20 @@
         private readonly int units;
         private readonly int tens;
         private readonly int numberOfHundreds;
+        private readonly int number;
 
         public HundredGroup(int number)
         {
+            this.number = number;
             var formattedNumber = number.ToString("000");
             numberOfHundreds = NumberAtIndex(formattedNumber, 0);
             tens = NumberAtIndex(formattedNumber, 1) * 10;
             units = NumberAtIndex(formattedNumber, 2);
+        }
+
+        public int Number
+        {
+            get { return number; }
         }
 
         private static int NumberAtIndex(string formattedNumber, int index)
