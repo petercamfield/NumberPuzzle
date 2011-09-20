@@ -136,6 +136,48 @@ namespace NumberToLanguageConverterTests
         }
 
         [Test]
+        public void LooksUpThirty()
+        {
+            AssertLookupEquals(30, "thirty");
+        }
+
+        [Test]
+        public void LooksUpFourty()
+        {
+            AssertLookupEquals(40, "fourty");
+        }
+
+        [Test]
+        public void LooksUpFifty()
+        {
+            AssertLookupEquals(50, "fifty");
+        }
+
+        [Test]
+        public void LooksUpSixty()
+        {
+            AssertLookupEquals(60, "sixty");
+        }
+
+        [Test]
+        public void LooksUpSeventy()
+        {
+            AssertLookupEquals(70, "seventy");
+        }
+
+        [Test]
+        public void LooksUpEighty()
+        {
+            AssertLookupEquals(80, "eighty");
+        }
+        
+        [Test]
+        public void LooksUpNinety()
+        {
+            AssertLookupEquals(90, "ninety");
+        }
+
+        [Test]
         public void ReturnsNotFoundLookupResult()
         {
             Assert.That(britishEnglishNumbers.Lookup(-1), Is.EqualTo(LookupResult.NotFound));

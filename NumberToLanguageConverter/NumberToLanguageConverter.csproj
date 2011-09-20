@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="BritishEnglishNumberConverter.cs" />
     <Compile Include="BritishEnglishNumbers.cs" />
+    <Compile Include="HundredGroup.cs" />
     <Compile Include="IConvertNumbers.cs" />
     <Compile Include="IDescribeNumbers.cs" />
     <Compile Include="LookupResult.cs" />

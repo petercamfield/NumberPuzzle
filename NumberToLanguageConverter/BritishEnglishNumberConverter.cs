@@ -17,7 +17,18 @@
         {
             var lookupResult = britishEnglishNumbers.Lookup(number);
             if (lookupResult.Found) return lookupResult.Description;
-            return "twenty one";
+
+            var hundredGroup = new HundredGroup(number);
+            return GetTensAndUnits(hundredGroup);
+            
+        }
+
+        private string GetTensAndUnits(HundredGroup hundredGroup)
+        {
+            const string numberFormat = "{0} {1}";
+            var tens = britishEnglishNumbers.Lookup(hundredGroup.Tens).Description;
+            var units = britishEnglishNumbers.Lookup(hundredGroup.Units).Description;
+            return string.Format(numberFormat, tens, units);
         }
     }
 }
