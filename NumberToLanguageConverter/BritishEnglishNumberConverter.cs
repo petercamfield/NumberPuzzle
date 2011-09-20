@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NumberToLanguageConverter
+﻿namespace NumberToLanguageConverter
 {
     public class BritishEnglishNumberConverter : IConvertNumbers
     {
@@ -10,7 +8,7 @@ namespace NumberToLanguageConverter
         {
         }
 
-        private BritishEnglishNumberConverter(IDescribeNumbers britishEnglishNumbers)
+        public BritishEnglishNumberConverter(IDescribeNumbers britishEnglishNumbers)
         {
             this.britishEnglishNumbers = britishEnglishNumbers;
         }
