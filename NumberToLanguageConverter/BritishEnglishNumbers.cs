@@ -13,9 +13,9 @@ namespace NumberToLanguageConverter
                     {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"}, {20, "twenty"}
                 };
 
-        public string Lookup(int number)
+        public LookupResult Lookup(int number)
         {
-            return lookup[number];
+            return lookup.ContainsKey(number) ? new LookupResult(lookup[number]) : LookupResult.NotFound;
         }
     }
 }

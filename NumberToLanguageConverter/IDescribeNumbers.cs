@@ -2,6 +2,6 @@
 {
     public interface IDescribeNumbers
     {
-        string Lookup(int number);
+        LookupResult Lookup(int number);
     }
 }

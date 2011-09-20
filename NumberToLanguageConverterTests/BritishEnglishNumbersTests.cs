@@ -8,124 +8,137 @@ namespace NumberToLanguageConverterTests
     {
         private readonly IDescribeNumbers britishEnglishNumbers = new BritishEnglishNumbers();
 
+        private void AssertLookupEquals(int number, string description)
+        {
+            var lookupResult = britishEnglishNumbers.Lookup(number);
+            Assert.That(lookupResult.Description, Is.EqualTo(description));
+            Assert.That(lookupResult.Found, Is.True);
+        }
+
         [Test]
         public void LooksUpOne()
         {
-            Assert.That(britishEnglishNumbers.Lookup(1), Is.EqualTo("one"));
+            AssertLookupEquals(1, "one");
         }
 
         [Test]
         public void LooksUpTwo()
         {
-            Assert.That(britishEnglishNumbers.Lookup(2), Is.EqualTo("two"));
+            AssertLookupEquals(2, "two");
         }
 
         [Test]
         public void LooksUpThree()
         {
-            Assert.That(britishEnglishNumbers.Lookup(3), Is.EqualTo("three"));
+            AssertLookupEquals(3, "three");
         }
 
         [Test]
         public void LooksUpFour()
         {
-            Assert.That(britishEnglishNumbers.Lookup(4), Is.EqualTo("four"));
+            AssertLookupEquals(4, "four");
         }
 
         [Test]
         public void LooksUpFive()
         {
-            Assert.That(britishEnglishNumbers.Lookup(5), Is.EqualTo("five"));
+            AssertLookupEquals(5, "five");
         }
         
         [Test]
         public void LooksUpSix()
         {
-            Assert.That(britishEnglishNumbers.Lookup(6), Is.EqualTo("six"));
+            AssertLookupEquals(6, "six");
         }
         
         [Test]
         public void LooksUpSeven()
         {
-            Assert.That(britishEnglishNumbers.Lookup(7), Is.EqualTo("seven"));
+            AssertLookupEquals(7, "seven");
         }
 
         [Test]
         public void LooksUpEight()
         {
-            Assert.That(britishEnglishNumbers.Lookup(8), Is.EqualTo("eight"));
+            AssertLookupEquals(8, "eight");
         }
 
         [Test]
         public void LooksUpNine()
         {
-            Assert.That(britishEnglishNumbers.Lookup(9), Is.EqualTo("nine"));
+            AssertLookupEquals(9, "nine");
         }
 
         [Test]
         public void LooksUpTen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(10), Is.EqualTo("ten"));
+            AssertLookupEquals(10, "ten");
         }
 
         [Test]
         public void LooksUpEleven()
         {
-            Assert.That(britishEnglishNumbers.Lookup(11), Is.EqualTo("eleven"));
+            AssertLookupEquals(11, "eleven");
         }
 
         [Test]
         public void LooksUpTwelve()
         {
-            Assert.That(britishEnglishNumbers.Lookup(12), Is.EqualTo("twelve"));
+            AssertLookupEquals(12, "twelve");
         }
 
         [Test]
         public void LooksUpThirteen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(13), Is.EqualTo("thirteen"));
+            AssertLookupEquals(13, "thirteen");
         }
 
         [Test]
         public void LooksUpFourteen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(14), Is.EqualTo("fourteen"));
+            AssertLookupEquals(14, "fourteen");
         }
 
         [Test]
         public void LooksUpFifteen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(15), Is.EqualTo("fifteen"));
+            AssertLookupEquals(15, "fifteen");
         }
 
         [Test]
         public void LooksUpSixteen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(16), Is.EqualTo("sixteen"));
+            AssertLookupEquals(16, "sixteen");
         }
 
         [Test]
         public void LooksUpSeventeen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(17), Is.EqualTo("seventeen"));
+            AssertLookupEquals(17, "seventeen");
         }
 
         [Test]
         public void LooksUpEighteen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(18), Is.EqualTo("eighteen"));
+            AssertLookupEquals(18, "eighteen");
         }
 
         [Test]
         public void LooksUpNineteen()
         {
-            Assert.That(britishEnglishNumbers.Lookup(19), Is.EqualTo("nineteen"));
+            AssertLookupEquals(19, "nineteen");
         }
 
         [Test]
         public void LooksUpTwenty()
         {
-            Assert.That(britishEnglishNumbers.Lookup(20), Is.EqualTo("twenty"));
+            AssertLookupEquals(20, "twenty");
+        }
+
+        [Test]
+        public void ReturnsNotFoundLookupResult()
+        {
+            Assert.That(britishEnglishNumbers.Lookup(-1), Is.EqualTo(LookupResult.NotFound));
         }
     }
 

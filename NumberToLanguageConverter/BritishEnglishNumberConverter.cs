@@ -15,7 +15,8 @@
 
         public string Convert(int number)
         {
-            return britishEnglishNumbers.Lookup(number);
+            var lookupResult = britishEnglishNumbers.Lookup(number);
+            return lookupResult.Description;
         }
     }
 }
