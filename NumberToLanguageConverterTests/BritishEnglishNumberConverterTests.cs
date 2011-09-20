@@ -6,14 +6,14 @@ namespace NumberToLanguageConverterTests
     [TestFixture]
     public class BritishEnglishNumberConverterTests
     {
-        private readonly BritishEnglishNumberConverter converter = new BritishEnglishNumberConverter();
+        private readonly NumberConverter converter = new NumberConverter();
 
         [Test]
         public void AttemptsToLookUpNumberForConversion()
         {
             var numberDescriber = new Mock<IDescribeNumbers>();
             numberDescriber.Setup(n => n.LookupNumber(1)).Returns(new LookupResult("1"));
-            var numberConverter = new BritishEnglishNumberConverter(numberDescriber.Object);
+            var numberConverter = new NumberConverter(numberDescriber.Object);
             numberConverter.Convert(1);
             numberDescriber.Verify(n=>n.LookupNumber(1));
         }

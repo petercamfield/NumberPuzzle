@@ -35,13 +35,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BritishEnglishNumberConverter.cs" />
+    <Compile Include="NumberConverter.cs" />
     <Compile Include="BritishEnglishNumbers.cs" />
+    <Compile Include="ConversionStrategy.cs" />
     <Compile Include="HundredGroup.cs" />
+    <Compile Include="HundredsTensAndUnitsConversionStrategy.cs" />
+    <Compile Include="HundredsConversionStrategy.cs" />
     <Compile Include="IConvertNumbers.cs" />
     <Compile Include="IDescribeNumbers.cs" />
     <Compile Include="LookupResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TensAndUnitsConversionStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BritishEnglishNumberConverterTests.cs" />
     <Compile Include="BritishEnglishNumbersTests.cs" />
+    <Compile Include="ConversionStrategyFactoryTests.cs" />
     <Compile Include="HundredGroupTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
