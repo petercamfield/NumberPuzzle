@@ -26,14 +26,14 @@
             return int.Parse(formattedNumber.Substring(index, 1));
         }
 
-        public int Tens
-        {
-            get { return tens; }
-        }
-
         public int Units
         {
             get { return units; }
+        }
+
+        public int Tens
+        {
+            get { return tens; }
         }
 
         public int Hundreds 

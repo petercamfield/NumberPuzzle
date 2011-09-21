@@ -2,7 +2,7 @@
 {
     public class TensAndUnitsConversionStrategy : ConversionStrategy
     {
-
+        
         public TensAndUnitsConversionStrategy(IDescribeNumbers numberDescriber) : base(numberDescriber)
         {
         }
