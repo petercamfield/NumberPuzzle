@@ -37,6 +37,7 @@ namespace NumberToLanguageConverter
             return numberGroups.Select(numberGroup => factory.CreateConversionStrategy(numberGroup));
         }
 
+        //TODO seperate class for results calculator
         private IEnumerable<string> GetResults(IEnumerable<HundredGroup> numberGroups, IEnumerable<ConversionStrategy> converters)
         {
             var numberGroupEnumerator = numberGroups.GetEnumerator();
