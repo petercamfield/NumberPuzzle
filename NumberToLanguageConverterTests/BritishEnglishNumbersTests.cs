@@ -142,9 +142,9 @@ namespace NumberToLanguageConverterTests
         }
 
         [Test]
-        public void LooksUpFourty()
+        public void LooksUpForty()
         {
-            AssertLookupNumberEquals(40, "fourty");
+            AssertLookupNumberEquals(40, "forty");
         }
 
         [Test]

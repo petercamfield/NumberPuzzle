@@ -49,7 +49,7 @@ namespace NumberPuzzleTests
             var outputWriter = new StringWriter();
             Console.SetOut(outputWriter);
             Program.Main(new[] {input.ToString()});
-            return outputWriter.GetStringBuilder().ToString();
+            return outputWriter.GetStringBuilder().ToString().Trim();
         }
     }
 }
