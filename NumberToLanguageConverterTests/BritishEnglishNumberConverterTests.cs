@@ -85,5 +85,11 @@ namespace NumberToLanguageConverterTests
             Assert.That(converter.Convert(1000001), Is.EqualTo("one million and one"));
         }
 
+        [Test]
+        public void ReturnsOneMillionOneThousandOneHundredAndOne()
+        {
+            Assert.That(converter.Convert(1001101), Is.EqualTo("one million one thousand one hundred and one"));
+        }
+
     }
 }

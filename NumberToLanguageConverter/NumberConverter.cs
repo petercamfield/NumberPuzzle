@@ -54,8 +54,8 @@ namespace NumberToLanguageConverter
 
         private static bool ShouldAddConjunctionBeforeLastGroup(IEnumerable<HundredGroup> numberGroups)
         {
-            var lastGroup = numberGroups.Last();
             var otherGroups = numberGroups.Take(2);
+            var lastGroup = numberGroups.Last();
             var lastGroupRequiresConjunction = lastGroup.Hundreds==0 && lastGroup.Number>0;
             var otherGroupsHaveAValue =
                 otherGroups.Select(group => group.Number > 0).Aggregate((sofar, current) => sofar || current);
