@@ -7,7 +7,6 @@ namespace NumberToLanguageConverterTests
     public class ConversionStrategyFactoryTests
     {
         private static readonly ConversionStrategyFactory Factory = new ConversionStrategyFactory(new BritishEnglishNumbers());
-        private static readonly LookupResult EmptyLookup = new LookupResult(string.Empty);
 
         [Test]
         public void ReturnsHundredsStrategy()

@@ -46,6 +46,7 @@
     <Compile Include="IDescribeNumbers.cs" />
     <Compile Include="LookupResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultsCalculator.cs" />
     <Compile Include="TensAndUnitsConversionStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

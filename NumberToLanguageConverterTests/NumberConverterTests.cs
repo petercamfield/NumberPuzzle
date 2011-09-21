@@ -4,7 +4,7 @@ using Moq;
 namespace NumberToLanguageConverterTests
 {
     [TestFixture]
-    public class BritishEnglishNumberConverterTests
+    public class NumberConverterTests
     {
         private readonly NumberConverter converter = new NumberConverter();
 
